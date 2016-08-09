@@ -73,9 +73,6 @@ public class App {
 		         window.repaint();
 		         System.out.println(number);
 
-		         if (number < 30) {
-		         
-		         }
 
 		        } catch (Exception e) {}
 		       }
