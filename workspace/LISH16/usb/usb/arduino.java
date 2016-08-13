@@ -20,7 +20,7 @@ public class arduino {
 	static SerialPort chosenPort;
 	static int x = 0;
 
-	public static void main(String[] args) {
+	public static void read(String[] args) {
 		
 
 		  // create and configure the window
@@ -68,7 +68,7 @@ public class arduino {
 		       while (scanner.hasNextLine()) {
 		        try {
 		         String line = scanner.nextLine();
-		         int number = Integer.parseInt(line);
+		       int number = Integer.parseInt(line);
 		         series.add(x++, number);
 		         window.repaint();
 		         System.out.println(number);
