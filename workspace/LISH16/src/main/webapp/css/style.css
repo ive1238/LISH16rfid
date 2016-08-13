@@ -1,12 +1,76 @@
-body
+html, body {
+    height: 100%;
+   }
+.navbar
 {
-	background: url('../img/bg.jpg') no-repeat center center fixed;
+	margin-bottom:0;
+	border-radius: 0;
+}
+.navbar-inverse
+{
+	background-color: #51445e;
+}
+.navbar-inverse .navbar-nav>li>a
+{
+	color: #f44336;
+}
+.navbar-inverse .navbar-brand
+{
+	font-family: 'Indie Flower', cursive;
+	color: #00BCD4;
+	font-weight: 400;
+	padding: 15px 40px;
+    font-size: 24px;
+}
+.navbar-inverse
+{
+	border-color: #51445e;
+}
+.wrapper {
+    margin: 0 auto;
+    height: 100%;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url('../img/bg.jpg') no-repeat fixed;
 	background-size: cover;
+	display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+	
+}
+.container-fluid *
+{
+	text-align: center;
+}
+.container-fluid > .msg
+{
+	margin-bottom: 7%;
+	font-size: 36px;
+	color: #5bc0de;
 }
 .ctrl-btn
 {
-	margin-right: auto;
-	margin-left: auto;
-	padding-right: 20px;
-	padding-left: 20px;
+	 display: table-cell;
+    vertical-align: middle;
+}
+.ctrl-btn > .container-fluid
+{
+ margin-left: auto;
+    margin-right: auto; 
+}
+.btn-lg
+{
+	 white-space: normal;
+	 margin-top: 5px;
+	
+}
+@media (min-width: 768px)
+{
+	.btn-lg
+	{
+		font-size: 2.718em;
+		margin-top: 5px;
+	}
 }

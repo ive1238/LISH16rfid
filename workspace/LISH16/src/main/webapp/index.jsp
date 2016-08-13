@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	<title>LIBRfid</title>
 </head>
 <body>
@@ -20,28 +21,27 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">LibeRfID</a>
+			<div class="navbar-brand">LiberFID</div>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li> 
-        <li><a href="#">Page 3</a></li> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+        <li class="active"><a href="#">Началана страница</a></li>
+        <li><a href="catalog.jsp">Каталог</a></li>
+        <li><a href="scan.jsp">Сканиране на книги</a></li> 
+        <li><a href="activity.jsp"> Последни действия</a></li> 
+       </ul>
     </div>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="wrapper">
 		<div class="ctrl-btn">
-			<a href="check.jsp" class="btn btn-warning btn-lg">Проверка на книгите</a>
-			<a href="add.jsp" class="btn btn-success btn-lg">Добавяне на книга</a>
-			<a href="remove.jsp" class="btn btn-danger btn-lg">Премахване на книга</a>
+		<div class="container-fluid">
+			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични $4331 книги.</p></div>
+			<div class="col-sm-4 col-xs-12"><div class="container-fluid"></div><a href="check.jsp" class="btn btn-warning btn-lg">Проверка на книгите</a></div>
+			<div class="col-sm-4 col-xs-12"><a href="add.jsp" class="btn btn-success btn-lg">Добавяне на книга</a></div>
+			<div class="col-sm-4 col-xs-12"><a href="remove.jsp" class="btn btn-danger btn-lg">Премахване на книга</a></div>
+		</div>
 		</div>
 	</div>
-</body>
+	</body>
 </html>
