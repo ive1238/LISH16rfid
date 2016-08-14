@@ -34,7 +34,7 @@
 		</div>
 	</nav>
 	<div class="wrapper">
-		<div class="ctrl-btn">
+		<div class="content">
 		<div class="container-fluid">
 			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични $4331 книги.</p></div>
 			<div class="col-sm-4 col-xs-12"><div class="container-fluid"></div><a href="check.jsp" class="btn btn-warning btn-lg">Проверка на книгите</a></div>

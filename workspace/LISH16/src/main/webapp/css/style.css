@@ -50,12 +50,12 @@ html, body {
 	font-size: 36px;
 	color: #5bc0de;
 }
-.ctrl-btn
+.content
 {
 	 display: table-cell;
     vertical-align: middle;
 }
-.ctrl-btn > .container-fluid
+.content > .container-fluid
 {
  margin-left: auto;
     margin-right: auto; 
