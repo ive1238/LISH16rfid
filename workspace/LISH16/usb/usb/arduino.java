@@ -44,9 +44,9 @@ public class arduino {
 		   portList.addItem(portNames[i].getSystemPortName());
 
 		  // create the line graph
-		  final XYSeries series = new XYSeries("Distance Sensor Readings");
+		  final XYSeries series = new XYSeries("Readings");
 		  XYSeriesCollection dataset = new XYSeriesCollection(series);
-		  JFreeChart chart = ChartFactory.createXYLineChart("Light Sensor Readings", "Time (seconds)", "ADC Reading", dataset);
+		  JFreeChart chart = ChartFactory.createXYLineChart("Readings", "Time", "Reading", dataset);
 		  window.add(new ChartPanel(chart), BorderLayout.CENTER);
 
 		  // configure the connect button and use another thread to listen for data

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="usb.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,9 @@
 	<title>LIBRfid</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	
+	<div class="wrapper">
+<nav class="navbar navbar-inverse">
 		<div class="contatiner-fluid">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,7 +36,6 @@
     </div>
 		</div>
 	</nav>
-	<div class="wrapper">
 		<div class="content">
 		<div class="container-fluid">
 			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични $4331 книги.</p></div>
@@ -43,5 +45,10 @@
 		</div>
 		</div>
 	</div>
-	</body>
+	<footer class="footer">
+	<div class="container"><p><%=
+   Read.asdf()
+  %></p></div>
+	</footer>
+</body>
 </html>
