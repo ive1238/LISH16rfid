@@ -28,7 +28,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Началана страница</a></li>
+        <li><a href="index.jsp">Началана страница</a></li>
         <li><a href="catalog.jsp">Каталог</a></li>
         <li><a href="scan.jsp">Сканиране на книги</a></li> 
         <li><a href="activity.jsp"> Последни действия</a></li> 
@@ -36,19 +36,22 @@
     </div>
 		</div>
 	</nav>
+		<div class="center">
 		<div class="content">
 		<div class="container-fluid">
-			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични $4331 книги.</p></div>
-			<div class="col-sm-4 col-xs-12"><div class="container-fluid"></div><a href="check.jsp" class="btn btn-warning btn-lg">Проверка на книгите</a></div>
-			<div class="col-sm-4 col-xs-12"><a href="add.jsp" class="btn btn-success btn-lg">Добавяне на книга</a></div>
-			<div class="col-sm-4 col-xs-12"><a href="remove.jsp" class="btn btn-danger btn-lg">Премахване на книга</a></div>
+			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични <%= Read.asdf() %> книги.</p></div>
+			<div class="col-sm-6 col-xs-12"><a href="catalog.jsp" class="btn btn-success btn-lg">Каталог</a></div>
+			<div class="col-sm-6 col-xs-12"><a href="check.jsp" class="btn btn-info btn-lg">Проверка на книгите</a></div>
 		</div>
 		</div>
-	</div>
-	<footer class="footer">
-	<div class="container"><p><%=
-   Read.asdf()
-  %></p></div>
+		</div>
+		<footer class="footer">
+	<div class="container-fluid"><p><b><em>LibRFID <script>document.write(new Date().getFullYear())</script>.</em></b></p></div>
 	</footer>
+	</div>
+	<script>
+	b = window.location.pathname.split("/").slice(-1)[0];
+	  $('ul a[href="' + b + '"]').parent().addClass('active');
+</script>
 </body>
 </html>
