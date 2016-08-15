@@ -1,13 +1,17 @@
 package usb;
 
 public class Read {
-	//public static void main(String[] args) {
+    public static int number;
+
+	public static void main(String[] args) {
 		
-//arduino.read(args);
-//	}
+arduino.read(args);
+
+	}
 	public static int asdf(){
-		int number = 532;
-        return number;
+        System.out.println(number);
+		int num = number;
+        return num;
         
 	}
 	

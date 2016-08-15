@@ -16,13 +16,13 @@ import org.jfree.data.xy.XYSeriesCollection;
 import com.fazecast.jSerialComm.SerialPort;
 
 public class arduino {
-	
+    
 	static SerialPort chosenPort;
 	static int x = 0;
-
+	private static int number;
 	public static void read(String[] args) {
 		
-
+         
 		  // create and configure the window
 		  final JFrame window = new JFrame();
 		  window.setTitle("Sensor Graph GUI");
@@ -68,10 +68,9 @@ public class arduino {
 		       while (scanner.hasNextLine()) {
 		        try {
 		         String line = scanner.nextLine();
-		       int number = Integer.parseInt(line);
-		         series.add(x++, number);
+		         setNumber(Integer.parseInt(line));
+		         series.add(x++, getNumber());
 		         window.repaint();
-		         System.out.println(number);
 
 
 		        } catch (Exception e) {}
@@ -94,5 +93,17 @@ public class arduino {
 		  // show the window
 		  window.setVisible(true);
 		 }
+	/**
+	 * @return the number
+	 */
+	public static int getNumber() {
+		return number;
+	}
+	/**
+	 * @param number the number to set
+	 */
+	public static void setNumber(int newNumber) {
+		number = newNumber;
+	}
 
 		}
