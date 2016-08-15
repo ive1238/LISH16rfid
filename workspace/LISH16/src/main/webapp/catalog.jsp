@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="usb.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,9 @@
 	<title>LIBRfid</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	
+	<div class="wrapper">
+<nav class="navbar navbar-inverse">
 		<div class="contatiner-fluid">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -25,7 +28,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Началана страница</a></li>
+        <li><a href="index.jsp">Началана страница</a></li>
         <li><a href="catalog.jsp">Каталог</a></li>
         <li><a href="scan.jsp">Сканиране на книги</a></li> 
         <li><a href="activity.jsp"> Последни действия</a></li> 
@@ -33,15 +36,62 @@
     </div>
 		</div>
 	</nav>
-	<div class="wrapper">
+		<div class="center">
 		<div class="content">
-		<div class="container-fluid">
-			<div class="col-xs-12 msg"><p>Здравейте, във вашата библиотека в момента са налични $4331 книги.</p></div>
-			<div class="col-sm-4 col-xs-12"><div class="container-fluid"></div><a href="check.jsp" class="btn btn-warning btn-lg">Проверка на книгите</a></div>
-			<div class="col-sm-4 col-xs-12"><a href="add.jsp" class="btn btn-success btn-lg">Добавяне на книга</a></div>
-			<div class="col-sm-4 col-xs-12"><a href="remove.jsp" class="btn btn-danger btn-lg">Премахване на книга</a></div>
+		<div class="container">
+			<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h4>Каталог <span class="btn-group pull-right">
+        <a href="#" class="btn btn-default btn-sm">## Lock</a>
+        <a href="#" class="btn btn-default btn-sm">## Delete</a>
+        <a href="#" class="btn btn-default btn-sm">## Move</a>
+    </span></h4></div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
 		</div>
 		</div>
+		</div>
+		<footer class="footer">
+	<div class="container-fluid"><p><b><em>LibRFID <script>document.write(new Date().getFullYear())</script>.</em></b></p></div>
+	</footer>
 	</div>
-	</body>
+	<script>
+	b = window.location.pathname.split("/").slice(-1)[0];
+	  $('ul a[href="' + b + '"]').parent().addClass('active');
+</script>
+</body>
 </html>
