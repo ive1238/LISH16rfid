@@ -1,54 +1,73 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ page import="usb.*" %>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-	<title>LIBRfid</title>
-</head>
-<body>
-	
-	<div class="wrapper">
-<nav class="navbar navbar-inverse">
-		<div class="contatiner-fluid">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-			</button>
-			<div class="navbar-brand">LiberFID</div>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="index.jsp">Началана страница</a></li>
-        <li><a href="catalog.jsp">Каталог</a></li>
-        <li><a href="scan.jsp">Сканиране на книги</a></li> 
-        <li><a href="activity.jsp"> Последни действия</a></li> 
-       </ul>
-    </div>
-		</div>
-	</nav>
-		<div class="center">
-		<div class="content">
+<%@include  file="beginning.html" %>
 		<div class="container">
 			<div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"><h4>Каталог <span class="btn-group pull-right">
-        <a href="#" class="btn btn-default btn-sm">## Lock</a>
-        <a href="#" class="btn btn-default btn-sm">## Delete</a>
-        <a href="#" class="btn btn-default btn-sm">## Move</a>
-    </span></h4></div>
-  <div class="panel-body">
-    <p>...</p>
+  <div class="panel-heading"><h2>Каталог <span class="btn-group pull-right">
+        <a href="#" class="btn btn-success btn-sm" id="myBtn"><span class="glyphicon glyphicon-plus"></span> Добавяне на книга</a>
+    </span></h2>
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3><span class="glyphicon glyphicon-book"></span> Добавяне на книга</h3>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="title"><span class="glyphicon glyphicon-text-background"></span> Заглавие</label>
+              <input type="text" class="form-control" id="title" placeholder="Въведете заглавие на книгата" required>
+            </div>
+            <div class="form-group">
+              <label for="author"><span class="glyphicon glyphicon-user"></span> Автор</label>
+              <input type="text" class="form-control" id="author" placeholder="Въведете автор на книгата" required>
+            </div>
+            <div class="form-group">
+              <label for="genre"><span class="glyphicon glyphicon-list"></span> Жанр</label>
+               <select class="form-control" id="genre" required>
+    				<option>Въведете жанр</option>
+				    <option value="$genre1">$Жанр 1</option>
+				    <option value="$genre2">$Жанр 2</option>
+				    <option value="$genre2"">$Жанр 3</option>
+ 			  </select>
+            </div>
+            <div class="form-group">
+              <label for="RFID number"><span class="glyphicon glyphicon-tags"></span> RFID код</label>
+              <input type="number" class="form-control" id="rfid" placeholder="Въведете код на чипа" required>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok"></span> Добавяне</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      </div>
   </div>
+    </div>
+  <div class="panel-body">
+  <p>Търсене на книга</p>
+    <select class="form-control" id="genre_sch">
+    				<option>По жанр</option>
+				    <option value="$genre1">$Жанр 1</option>
+				    <option value="$genre2">$Жанр 2</option>
+				    <option value="$genre3"">$Жанр 3</option>
+ 	</select>
+ 	<select class="form-control" id="author_sch">
+    				<option>По автор</option>
+				    <option value="$author1">$Автор 1</option>
+				    <option value="$author2">$Автор 2</option>
+				    <option value="$author3"">$Автор 3</option>
+ 	</select>
+ 	<input type="text" class="form-control" id="title_sch" placeholder="По заглавие">
+ 	<input type="number" class="form-control" id="rfid_sch" placeholder="По RFID код на чипа">
+  </div>
+  <span class="btn-group pull-right">
+        <a href="#" class="btn btn-default btn-sm" id="myBtn"><span class="glyphicon glyphicon-plus"></span> Добавяне на книга</a>
+    </span>
 
   <!-- Table -->
   <table class="table">
@@ -83,15 +102,4 @@
   </table>
 </div>
 		</div>
-		</div>
-		</div>
-		<footer class="footer">
-	<div class="container-fluid"><p><b><em>LibRFID <script>document.write(new Date().getFullYear())</script>.</em></b></p></div>
-	</footer>
-	</div>
-	<script>
-	b = window.location.pathname.split("/").slice(-1)[0];
-	  $('ul a[href="' + b + '"]').parent().addClass('active');
-</script>
-</body>
-</html>
+<%@include  file="end.html" %>
