@@ -9,8 +9,8 @@ public class Read {
 
 	public static int asdf(){
         System.out.println(number);
-		int num = number;
-        return num;
+        return arduino.getNumber();
+    	
         
 	}
 	
