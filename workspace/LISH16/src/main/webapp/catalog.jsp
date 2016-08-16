@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="usb.*" %>
-<%@include  file="beginning.html" %>
+<%@include  file="beginning.jsp" %>
 		<div class="container">
 			<div class="panel panel-default">
   <!-- Default panel contents -->
@@ -49,57 +51,65 @@
   </div>
     </div>
   <div class="panel-body">
-  <p>Търсене на книга</p>
-    <select class="form-control" id="genre_sch">
-    				<option>По жанр</option>
-				    <option value="$genre1">$Жанр 1</option>
-				    <option value="$genre2">$Жанр 2</option>
-				    <option value="$genre3"">$Жанр 3</option>
- 	</select>
- 	<select class="form-control" id="author_sch">
+  <form action="#">
+  <p>Филтриране на книги:</p>
+  <input type="number" class="form-control" id="rfid_sch" placeholder="По RFID код на чипа">
+  <input type="text" class="form-control" id="title_sch" placeholder="По заглавие">
+  <select class="form-control" id="author_sch">
     				<option>По автор</option>
 				    <option value="$author1">$Автор 1</option>
 				    <option value="$author2">$Автор 2</option>
 				    <option value="$author3"">$Автор 3</option>
- 	</select>
- 	<input type="text" class="form-control" id="title_sch" placeholder="По заглавие">
- 	<input type="number" class="form-control" id="rfid_sch" placeholder="По RFID код на чипа">
-  </div>
+  </select>
+  <select class="form-control" id="genre_sch">
+    				<option>По жанр</option>
+				    <option value="$genre1">$Жанр 1</option>
+				    <option value="$genre2">$Жанр 2</option>
+				    <option value="$genre3"">$Жанр 3</option>
+  </select>
   <span class="btn-group pull-right">
-        <a href="#" class="btn btn-default btn-sm" id="myBtn"><span class="glyphicon glyphicon-plus"></span> Добавяне на книга</a>
-    </span>
+  	<button type="submit" class="btn btn-default btn-sm" id="myBtn1"><span class="glyphicon glyphicon-filter"></span> Филтрирай</button>
+  </span>
+  </form>
+  </div>
+  
 
   <!-- Table -->
   <table class="table">
   <thead>
     <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>RFID</th>
+      <th>Заглавие</th>
+      <th>Автор</th>
+      <th>Жанр</th>
+      <th>Действия</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">1234567</th>
+      <td>Под игото</td>
+      <td>Иван Вазов</td>
+      <td>Исторически роман</td>
+      <%@ include file="actions.html" %>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">8923319</th>
+      <td>Бай Ганьо</td>
+      <td>Алеко Константинов</td>
+      <td>Сборник с фейлетони</td>
+      <%@ include file="actions.html" %>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">9810648</th>
+      <td>Island of the Blue Dolphins</td>
+      <td>Scott O'Dell</td>
+      <td>Фантастика</td>
+      <%@ include file="actions.html" %>
     </tr>
   </tbody>
   </table>
+  <div class="panel-footer">Последно актуализиран: <script>document.write(Date().slice(0,25))</script> </div>
 </div>
 		</div>
-<%@include  file="end.html" %>
+<%@include  file="end.jsp" %>
